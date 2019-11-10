@@ -1,0 +1,17 @@
+body {
+  background-color: #fff;
+  touch-action: pan-y;
+}
+body li {
+  list-style: none;
+}
+body .mui-table-view-cell {
+  display: flex;
+}
+body .mui-table-view-cell .switch {
+  flex: 1;
+}
+body .mui-table-view-cell .main {
+  flex: 9;
+  margin-left: 10px;
+}

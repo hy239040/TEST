@@ -2,13 +2,11 @@
     <div>
         <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
             <div class="mui-scroll">
-                <a :class="['mui-control-item',item.id===0?'mui-active':'']" 
-                v-for="item in photoData" :key="item.id" 
-                @click="get(item.id)"
-                >
+                <a :class="['mui-control-item',item.id===0?'mui-active':'']" v-for="item in photoData" :key="item.id"
+                    @click="get(item.id)">
                     {{item.title}}
                 </a>
-                
+
             </div>
         </div>
         <ul class="photolist">
@@ -21,7 +19,7 @@
                         <span>{{item.zhaiyao}}</span>
                     </div>
                 </router-link>
-               
+
             </li>
         </ul>
     </div>
@@ -37,8 +35,8 @@
         data() {
             return {
                 photoData: [],
-                active:0,
-                imges:[]
+                active: 0,
+                imges: []
             }
         },
 
@@ -65,24 +63,24 @@
                         }
                     })
             },
-            getPhotoList(){
+            getPhotoList() {
                 this.$axios.get('api/ getimages/0')
                     .then(res => {
                         if (res.data.status === 0) {
                             this.imges = res.data.message
-                            
+
                         }
                     })
             },
-            get(id){
-                this.$axios.get('api/getimages/'+id)
-                .then(res =>{
-                    if (res.data.status === 0) {
-                        this.imges=res.data.message 
-                    }
-                })
+            get(id) {
+                this.$axios.get('api/getimages/' + id)
+                    .then(res => {
+                        if (res.data.status === 0) {
+                            this.imges = res.data.message
+                        }
+                    })
             }
-            
+
         }
     }
 </script>
@@ -98,14 +96,16 @@
             position: relative;
             border-radius: 30px;
             margin: 10px 0;
+
             img {
                 width: 100%;
                 display: block;
             }
+
             img[lazy=loading] {
                 width: 40px;
                 height: 400px;
-                margin:auto;
+                margin: auto;
             }
 
             div {

@@ -5,13 +5,13 @@ body {
 body li {
   list-style: none;
 }
-body .mui-table-view-cell {
+body .myCart {
   display: flex;
 }
-body .mui-table-view-cell .switch {
+body .myCart .switch {
   flex: 1;
 }
-body .mui-table-view-cell .main {
+body .myCart .main {
   flex: 9;
   margin-left: 10px;
 }

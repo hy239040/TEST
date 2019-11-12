@@ -33,11 +33,9 @@ export default {
     },
     methods:{
         getNewsList(){
-            this.$axios.get('api/getnewslist')
+            this.$http.get('api/getnewslist')
                 .then(res=>{
-                    if (res.data.status===0) {
-                        this.newsList=res.data.message
-                    }
+                        this.newsList=res.message
                 })
         }
     }
@@ -45,6 +43,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 .mui-media-body{
     h3{
         font-size: 14px;
